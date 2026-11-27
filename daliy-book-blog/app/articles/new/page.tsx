@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { saveArticle } from "../../lib/data";
-import { Button, Input, Card, Select, TextArea } from "@/app/components/ui";
+import { Button, Input, Card, Select, Content } from "@/app/components/ui";
 import { useAuth } from "@/app/components/auth/AuthProvider";
 
 export default function NewArticlePage() {
@@ -98,12 +98,16 @@ export default function NewArticlePage() {
             required
           />
 
-          <TextArea
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            placeholder="例:とても面白かったです。"
-            rows={15}
-          />
+          <div className="mb-6">
+            <label className="mb-2 block text-sm font-medium">
+              記事本文
+            </label>
+
+            <Content 
+              value={content}
+              onChange={setContent}
+            />
+          </div>
 
           <Input
             label="記事の著者"
