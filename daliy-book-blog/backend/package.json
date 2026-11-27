@@ -1,0 +1,24 @@
+{
+  "name": "dailybook-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/books/index.ts src/articles/index.ts --bundle --platform=node --target=node24 --outdir=dist --format=cjs"
+  },
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.0",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.0.0"
+  }
+}
